@@ -10,5 +10,8 @@ if __name__ == '__main__':
     serverIP = sys.argv[2]
     message = sys.argv[3]
 
-    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # SOCK_STREAM은 TCP socket을 뜻함
+    sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # SOCK_STREAM은 TCP socket을 뜻함.
     sock.bind((bindIP, 0))
+
+    try:
+        sock.connect((serverIP, 5425))  # 서버에 연결 요청
