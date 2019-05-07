@@ -1,3 +1,3 @@
- TCP-IP
+﻿ TCP-IP
  ======
-python을 이용한 TCP/IP통신
+python TCP/IP Communication
