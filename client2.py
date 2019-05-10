@@ -15,3 +15,16 @@ if __name__ == '__main__':
 
     try:
         sock.connect((serverIP, 5425))  # 서버에 연결 요청
+
+        # 서버로 송신
+        sbuff=bytes(message, encoding='utf-8')
+        sock.send(sbuff) # 메시지 송신
+        print('송신 : {0}'.format(message))
+
+        # 서버로부터 수신
+        rbuff=sock.recv(1024) # 메시지 수신
+        received=str(rbuff, encoding='utf-8')
+        print('수신 : {0}'.format(received))
+    
+    finally:
+        socket.close()
