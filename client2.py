@@ -22,8 +22,8 @@ if __name__ == '__main__':
         print('송신 : {0}'.format(message))
 
         # server로부터 수신
-        rbuff=sock.recv(1024) # message 수신
-        received=str(rbuff, encoding='utf-8')
+        buffer=sock.recv(1024) # message 수신
+        received=str(buffer, encoding='utf-8')
         print('수신 : {0}'.format(received))
     
     finally:

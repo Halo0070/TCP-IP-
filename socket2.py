@@ -17,3 +17,13 @@ class TCP(socketserver.BaseRequestHandler):
          sock.close()
 
 if __name__ == '__main__':
+    if len(sys.argv) < 2:
+        print('{0} <Bind IP>'.format(sys.argv[0]))
+        sys.exit()
+    
+    bindIP=sys.argv[1]
+    bindPort=5425   # 임의 server port 지정.
+
+    server=socketserver.TCPServer((bindIP, bindPort), TCP)
+    print('server start...')
+    server.serve_forever()  # client로부터 접속 요청을 받아들일 준비.
